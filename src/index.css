@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+
+/* Styles personnalisés */
+.min-h-screen { min-height: 100vh; }
+.bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
+.from-slate-900 { --tw-gradient-from: #0f172a; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(15 23 42 / 0)); }
+.via-blue-900 { --tw-gradient-stops: var(--tw-gradient-from), #1e3a8a, var(--tw-gradient-to, rgb(30 58 138 / 0)); }
+.to-slate-900 { --tw-gradient-to: #0f172a; }
+.backdrop-blur-lg { backdrop-filter: blur(16px); }
+.bg-white\\/10 { background-color: rgba(255, 255, 255, 0.1); }
+.border-white\\/20 { border-color: rgba(255, 255, 255, 0.2); }
+
+/* Responsive grid */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 768px) {
+  .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Flexbox utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-1 { flex: 1 1 0%; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Spacing */
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Sizing */
+.max-w-6xl { max-width: 72rem; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* Typography */
+.text-white { color: white; }
+.text-blue-200 { color: #bfdbfe; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+
+/* Borders & rounded */
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.border { border-width: 1px; }
+
+/* Shadows */
+.shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+
+/* Transitions */
+.transition-all { transition: all 0.15s ease-in-out; }
+
+/* Hover states */
+.hover\\:bg-white\\/10:hover { background-color: rgba(255, 255, 255, 0.1); }
+.hover\\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+
+/* Disabled states */
+.disabled\\:opacity-50:disabled { opacity: 0.5; }
+.disabled\\:cursor-not-allowed:disabled { cursor: not-allowed; }
+
+/* Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
+.animate-spin { animation: spin 1s linear infinite; }
+
+/* Gap utilities */
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+/* Background colors */
+.bg-blue-500 { background-color: #3b82f6; }
+.bg-blue-500\\/20 { background-color: rgba(59, 130, 246, 0.2); }
+.bg-green-500\\/20 { background-color: rgba(34, 197, 94, 0.2); }
+.bg-purple-500\\/20 { background-color: rgba(168, 85, 247, 0.2); }
+.bg-orange-500\\/20 { background-color: rgba(249, 115, 22, 0.2); }
+
+/* Border colors */
+.border-blue-400\\/30 { border-color: rgba(96, 165, 250, 0.3); }
+.border-green-400\\/30 { border-color: rgba(74, 222, 128, 0.3); }
+.border-purple-400\\/30 { border-color: rgba(192, 132, 252, 0.3); }
+.border-orange-400\\/30 { border-color: rgba(251, 146, 60, 0.3); }
+
+/* Gradient backgrounds */
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.from-blue-500 { --tw-gradient-from: #3b82f6; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(59 130 246 / 0)); }
+.to-blue-600 { --tw-gradient-to: #2563eb; }
+.hover\\:from-blue-600:hover { --tw-gradient-from: #2563eb; }
+.hover\\:to-blue-700:hover { --tw-gradient-to: #1d4ed8; }

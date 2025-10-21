@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Download, RefreshCw } from 'lucide-react';
+import { Play, RefreshCw } from 'lucide-react';
 
 const TSPSolver = () => {
   const [activeTab, setActiveTab] = useState('greedy');
