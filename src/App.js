@@ -281,7 +281,7 @@ const TSPSolver = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 mb-6 border border-white/20">
+        <div className="bg-white-10 backdrop-blur-lg rounded-2xl p-8 mb-6 border border-white-20">
           <h1 className="text-4xl font-bold text-white mb-2">
             Résolution du Problème du Voyageur de Commerce
           </h1>
@@ -291,13 +291,13 @@ const TSPSolver = () => {
         </div>
 
         {/* Dataset Selector */}
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 mb-6 border border-white/20">
+        <div className="bg-white-10 backdrop-blur-lg rounded-2xl p-6 mb-6 border border-white-20">
           <div className="flex gap-4 items-center">
             <label className="text-white font-semibold">Dataset:</label>
             <select 
               value={currentDataset}
               onChange={(e) => setCurrentDataset(e.target.value)}
-              className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white"
+              className="bg-white-10 border border-white-20 rounded-lg px-4 py-2 text-white"
             >
               <option value="berlin52">Berlin52 (52 villes)</option>
               <option value="eil101">EIL101 (101 villes)</option>
@@ -309,7 +309,7 @@ const TSPSolver = () => {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 mb-6 border border-white/20">
+        <div className="bg-white-10 backdrop-blur-lg rounded-2xl p-2 mb-6 border border-white-20">
           <div className="flex gap-2">
             {[
               { id: 'greedy', label: 'Méthode Constructive' },
@@ -322,7 +322,7 @@ const TSPSolver = () => {
                 className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all ${
                   activeTab === tab.id
                     ? 'bg-blue-500 text-white shadow-lg'
-                    : 'bg-white/5 text-blue-200 hover:bg-white/10'
+                    : 'bg-white/5 text-blue-200 hover:bg-white-10'
                 }`}
               >
                 {tab.label}
@@ -332,12 +332,12 @@ const TSPSolver = () => {
         </div>
 
         {/* Control Panel */}
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 mb-6 border border-white/20">
+        <div className="bg-white-10 backdrop-blur-lg rounded-2xl p-6 mb-6 border border-white-20">
           <div className="flex gap-4">
             <button
               onClick={runAlgorithm}
               disabled={running}
-              className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="flex-1 bg-gradient-blue bg-gradient-blue-hover text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl disabled-opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {running ? (
                 <>
@@ -356,13 +356,13 @@ const TSPSolver = () => {
 
         {/* Results */}
         {result && (
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+          <div className="bg-white-10 backdrop-blur-lg rounded-2xl p-8 border border-white-20">
             <h2 className="text-2xl font-bold text-white mb-6">
               Résultats - {result.method}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <div className="bg-blue-500/20 rounded-xl p-6 border border-blue-400/30">
+              <div className="bg-blue-500-20 rounded-xl p-6 border border-blue-400/30">
                 <div className="text-blue-200 text-sm mb-2">Distance Totale</div>
                 <div className="text-3xl font-bold text-white">{result.distance}</div>
                 <div className="text-blue-200 text-sm mt-1">Optimal: {result.optimal}</div>
@@ -398,7 +398,7 @@ const TSPSolver = () => {
         )}
 
         {/* Info Panel */}
-        <div className="mt-6 bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+        <div className="mt-6 bg-white-10 backdrop-blur-lg rounded-2xl p-6 border border-white-20">
           <h3 className="text-xl font-bold text-white mb-4">Informations Techniques</h3>
           <div className="text-blue-200 space-y-2">
             <p>• <strong>Distance:</strong> EUC_2D TSPLIB (arrondi à l'entier le plus proche)</p>
